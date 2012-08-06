@@ -1,4 +1,7 @@
-<?php
+<?php 
+	include '../session/session.php';
+	session_begin();
+
 	include '../dbconnector/connection.php';
 	$conn = dbConnect();
 	mysql_select_db("board", $conn);
