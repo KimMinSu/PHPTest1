@@ -1,5 +1,7 @@
-
-<?php session_start(); ?>
+<?php 
+include 'src/session/session.php';
+session_begin();
+?>
 
 <html>
 <head>
@@ -108,6 +110,9 @@
 			<th id="board_title">
 				<span>제목</span>
 			</th>
+			<th id="board_author">
+				<span>작성자</span>
+			</th>
 			<th id="board_date">
 				<span>작성일</span>
 			</th>
@@ -148,6 +153,9 @@
 					<?php 
 					}
 					?>
+				</td>
+				<td id="board_author">
+					<?=$row[author]?>
 				</td>
 				<td id="board_date">
 					<?=substr($row[write_date], 0, 10)?>
@@ -210,6 +218,7 @@
 		<select name="search_type">
 			<option selected value="title">제목</option>
 			<option value="contents">내용</option>
+			<option value="author">작성자</option>
 		</select>
 		<input type="text" name="keyword"/>
 		<input type="submit" value="검색"/>

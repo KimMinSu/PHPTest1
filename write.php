@@ -1,3 +1,7 @@
+<?php 
+	include 'src/session/session.php';
+	session_begin();
+?>
 <html>
 <head>
 <link rel="stylesheet" href="css/style.css"/>
@@ -6,6 +10,10 @@
 <body>
 <center>
 <h1>글 작성하기</h1>
+<?php 
+ echo $_SESSION['userName'];
+
+?>
 	<form name="write" action="src/board/boardwrite.php" method="post">
 	<table cellspacing="5" cellpadding="3">
 		<tbody>

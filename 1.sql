@@ -49,8 +49,14 @@ SELECT COUNT(id) AS total FROM board WHERE contents LIKE '%Àß%';
 
 SELECT * FROM board;
 
+SELECT * FROM member;
+
+
 UPDATE board SET write_date '2012-07-29 11:30:05' WHERE id=1;
 
 DROP TABLE member;
 
 SELECT email, password, username FROM member WHERE email='thooy@naver.com'
+
+ALTER TABLE board add author VARCHAR(15) NOT NULL;
+
